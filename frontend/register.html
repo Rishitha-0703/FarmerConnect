@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#246b45">
+  <title>Create account | FramerConnect</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/script.js" defer></script>
+</head>
+<body data-page="register">
+  <header id="site-header"></header>
+  <main class="page narrow">
+    <section class="panel">
+      <p class="eyebrow" data-i18n="join">JOIN THE MARKETPLACE</p>
+      <h1 data-i18n="create_account">Create an account</h1>
+      <form id="register-form">
+        <label for="register-name" data-i18n="full_name">Full name</label>
+        <input id="register-name" name="name" autocomplete="name" maxlength="100" required>
+        <label for="register-phone" data-i18n="phone">Phone number</label>
+        <input id="register-phone" name="phone" type="tel" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" autocomplete="tel" required>
+        <label for="register-password" data-i18n="password">Password</label>
+        <input id="register-password" name="password" type="password" minlength="8" maxlength="128" autocomplete="new-password" required>
+        <label for="register-role" data-i18n="account_type">I want to</label>
+        <select id="register-role" name="role" required>
+          <option value="consumer" data-i18n="buy_produce">Buy fresh produce</option>
+          <option value="farmer" data-i18n="sell_produce">Sell my produce</option>
+        </select>
+        <label for="register-location" data-i18n="location_optional">Location (optional)</label>
+        <div class="input-with-button">
+          <input id="register-location" name="location" maxlength="250" autocomplete="street-address">
+          <button class="button secondary" type="button" data-geolocate="register-location" data-i18n="use_gps">Use GPS</button>
+        </div>
+        <div id="register-upi-wrap" hidden>
+          <label for="register-upi" data-i18n="upi_id">UPI ID (optional)</label>
+          <input id="register-upi" name="upi_id" maxlength="100" autocomplete="off" placeholder="name@bank">
+        </div>
+        <button class="button primary full" type="submit" data-i18n="create_account">Create an account</button>
+      </form>
+      <p class="form-foot"><span data-i18n="already_account">Already have an account?</span> <a href="/" data-i18n="login">Log in</a></p>
+    </section>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

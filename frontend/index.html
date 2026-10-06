@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#246b45">
+  <title>FramerConnect | Fresh from farmers</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/script.js" defer></script>
+</head>
+<body data-page="login">
+  <header id="site-header"></header>
+  <main class="page narrow">
+    <section class="hero">
+      <p class="eyebrow" data-i18n="marketplace">FARMER-TO-CONSUMER MARKETPLACE</p>
+      <h1 data-i18n="welcome">Fresh from farmers, closer to home.</h1>
+      <p data-i18n="welcome_copy">Discover local produce and buy directly from the people who grow it.</p>
+    </section>
+    <section class="panel">
+      <h2 data-i18n="login">Log in</h2>
+      <form id="login-form">
+        <label for="login-phone" data-i18n="phone">Phone number</label>
+        <input id="login-phone" name="phone" type="tel" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" autocomplete="tel" required>
+        <label for="login-password" data-i18n="password">Password</label>
+        <input id="login-password" name="password" type="password" autocomplete="current-password" required>
+        <button class="button primary full" type="submit" data-i18n="login">Log in</button>
+      </form>
+      <p class="form-foot"><span data-i18n="no_account">New to FramerConnect?</span> <a href="/register.html" data-i18n="create_account">Create an account</a></p>
+    </section>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

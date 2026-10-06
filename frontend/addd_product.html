@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#246b45">
+  <title>Add a product | FramerConnect</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/script.js" defer></script>
+</head>
+<body data-page="add-product">
+  <header id="site-header"></header>
+  <main class="page narrow">
+    <section class="panel">
+      <a class="back-link" href="/farmer_dashboard.html" data-i18n="back_to_products">← Back to my products</a>
+      <p class="eyebrow" data-i18n="share_harvest">SHARE YOUR HARVEST</p>
+      <h1 data-i18n="add_product">Add a product</h1>
+      <form id="product-form" enctype="multipart/form-data">
+        <label for="product-name" data-i18n="product_name">Product name</label>
+        <input id="product-name" name="name" maxlength="120" required>
+        <label for="product-category" data-i18n="category">Category</label>
+        <select id="product-category" name="category" required>
+          <option value="" data-i18n="choose_category">Choose a category</option>
+          <option value="Vegetables" data-i18n="vegetables">Vegetables</option>
+          <option value="Fruits" data-i18n="fruits">Fruits</option>
+          <option value="Grains" data-i18n="grains">Grains</option>
+          <option value="Pulses" data-i18n="pulses">Pulses</option>
+          <option value="Spices" data-i18n="spices">Spices</option>
+          <option value="Other" data-i18n="other">Other</option>
+        </select>
+        <div class="form-columns">
+          <div><label for="product-quantity" data-i18n="quantity">Quantity in stock</label><input id="product-quantity" name="quantity" type="number" min="0" step="1" required></div>
+          <div><label for="product-price" data-i18n="price_per_unit">Price per unit (₹)</label><input id="product-price" name="price" type="number" min="0" max="1000000" step="0.01" required></div>
+        </div>
+        <label for="product-location" data-i18n="location">Location</label>
+        <div class="input-with-button">
+          <input id="product-location" name="location" maxlength="250" required>
+          <button class="button secondary" type="button" data-geolocate="product-location" data-i18n="use_gps">Use GPS</button>
+        </div>
+        <label for="product-description" data-i18n="description">Description</label>
+        <textarea id="product-description" name="description" rows="4" maxlength="2000"></textarea>
+        <label for="product-image" data-i18n="product_image">Product image (JPG, PNG, GIF, or WebP; max 5 MB)</label>
+        <input id="product-image" name="image" type="file" accept="image/jpeg,image/png,image/gif,image/webp">
+        <button class="button primary full" type="submit" data-i18n="publish_product">Publish product</button>
+      </form>
+    </section>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

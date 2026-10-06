@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#246b45">
+  <title>Farmer dashboard | FramerConnect</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/script.js" defer></script>
+</head>
+<body data-page="farmer">
+  <header id="site-header"></header>
+  <main class="page">
+    <section class="page-heading">
+      <div><p class="eyebrow" data-i18n="farmer_space">FARMER SPACE</p><h1 data-i18n="my_products">My products</h1></div>
+      <a class="button primary" href="/addd_product.html" data-i18n="add_product">Add a product</a>
+    </section>
+    <section class="panel compact">
+      <h2 data-i18n="seller_details">Seller details</h2>
+      <form id="farmer-profile-form" class="profile-form">
+        <div>
+          <label for="farmer-location" data-i18n="location">Location</label>
+          <div class="input-with-button">
+            <input id="farmer-location" name="location" maxlength="250" autocomplete="street-address" required>
+            <button class="button secondary" type="button" data-geolocate="farmer-location" data-i18n="use_gps">Use GPS</button>
+          </div>
+        </div>
+        <div>
+          <label for="farmer-upi" data-i18n="upi_id">UPI ID</label>
+          <input id="farmer-upi" name="upi_id" maxlength="100" placeholder="name@bank">
+        </div>
+        <button class="button secondary" type="submit" data-i18n="save_details">Save details</button>
+      </form>
+    </section>
+    <section id="farmer-products" class="product-grid" aria-live="polite"></section>
+    <section class="panel compact">
+      <div class="section-title"><h2 data-i18n="incoming_orders">Incoming orders</h2><a href="/orders.html" data-i18n="all_orders">All orders</a></div>
+      <div id="farmer-order-preview" class="order-list"></div>
+    </section>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

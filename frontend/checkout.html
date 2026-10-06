@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#246b45">
+  <title>Checkout | FramerConnect</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/script.js" defer></script>
+</head>
+<body data-page="checkout">
+  <header id="site-header"></header>
+  <main class="page narrow">
+    <section class="panel">
+      <a class="back-link" href="/cart.html" data-i18n="back_to_cart">← Back to cart</a>
+      <p class="eyebrow" data-i18n="almost_there">ALMOST THERE</p>
+      <h1 data-i18n="checkout">Checkout</h1>
+      <div id="checkout-summary" class="checkout-summary"></div>
+      <form id="checkout-form">
+        <label for="delivery-location" data-i18n="delivery_location">Delivery location</label>
+        <div class="input-with-button">
+          <input id="delivery-location" name="delivery_location" maxlength="250" required>
+          <button class="button secondary" type="button" data-geolocate="delivery-location" data-i18n="use_gps">Use GPS</button>
+        </div>
+        <label for="payment-method" data-i18n="payment_method">Payment method</label>
+        <select id="payment-method" name="payment_method" required>
+          <option value="cash" data-i18n="cash">Cash on delivery</option>
+          <option value="upi" data-i18n="upi">UPI</option>
+        </select>
+        <div id="payment-details-wrap" hidden>
+          <label for="payment-details" data-i18n="payment_reference">UPI payment reference (optional)</label>
+          <input id="payment-details" name="payment_details" maxlength="100">
+        </div>
+        <button class="button primary full" type="submit" data-i18n="place_order">Place order</button>
+      </form>
+    </section>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

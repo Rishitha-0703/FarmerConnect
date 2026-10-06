@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#246b45">
+  <title>Browse produce | FramerConnect</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/script.js" defer></script>
+</head>
+<body data-page="consumer">
+  <header id="site-header"></header>
+  <main class="page">
+    <section class="hero browse-hero">
+      <p class="eyebrow" data-i18n="grown_nearby">GROWN NEARBY, SHARED DIRECTLY</p>
+      <h1 data-i18n="browse_title">Good food starts with good connections.</h1>
+      <p data-i18n="browse_copy">Browse seasonal produce listed by farmers in your community.</p>
+    </section>
+    <section class="filter-bar" aria-label="Product filters" data-i18n-aria-label="search_filter_label">
+      <label class="sr-only" for="product-search" data-i18n="search_products">Search products</label>
+      <input id="product-search" type="search" placeholder="Search products or locations" data-i18n-placeholder="search_placeholder">
+      <label class="sr-only" for="category-filter" data-i18n="category">Category</label>
+      <select id="category-filter">
+        <option value="" data-i18n="all_categories">All categories</option>
+        <option value="Vegetables" data-i18n="vegetables">Vegetables</option>
+        <option value="Fruits" data-i18n="fruits">Fruits</option>
+        <option value="Grains" data-i18n="grains">Grains</option>
+        <option value="Pulses" data-i18n="pulses">Pulses</option>
+        <option value="Spices" data-i18n="spices">Spices</option>
+        <option value="Other" data-i18n="other">Other</option>
+      </select>
+    </section>
+    <section id="consumer-products" class="product-grid" aria-live="polite"></section>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
